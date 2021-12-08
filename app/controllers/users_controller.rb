@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    
+    redirect_to new_user_session_path, notice: 'You are required need to sign in' unless user_signed_in?
   end
 
   private
