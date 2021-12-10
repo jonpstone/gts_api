@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reviewer first name:</strong>
+  <%= @testimonial.reviewer_first_name %>
+</p>
+
+<p>
+  <strong>Reviewer last name:</strong>
+  <%= @testimonial.reviewer_last_name %>
+</p>
+
+<p>
+  <strong>Featured review:</strong>
+  <%= @testimonial.featured_review %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @testimonial.review %>
+</p>
+
+<p>
+  <strong>Review date:</strong>
+  <%= @testimonial.review_date %>
+</p>
+
+<%= link_to 'Edit', edit_testimonial_path(@testimonial) %> |
+<%= link_to 'Back', testimonials_path %>

@@ -1,0 +1,42 @@
+<%= form_with(model: testimonial) do |form| %>
+  <% if testimonial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(testimonial.errors.count, "error") %> prohibited this testimonial from being saved:</h2>
+
+      <ul>
+        <% testimonial.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reviewer_first_name %>
+    <%= form.text_field :reviewer_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reviewer_last_name %>
+    <%= form.text_field :reviewer_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :featured_review %>
+    <%= form.check_box :featured_review %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review %>
+    <%= form.text_area :review %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review_date %>
+    <%= form.datetime_select :review_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
