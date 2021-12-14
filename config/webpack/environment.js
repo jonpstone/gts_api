@@ -1,4 +1,5 @@
 const { environment } = require('@rails/webpacker')
+const webpack = require("webpack")
 
 // https://github.com/rails/webpacker/issues/2784#issuecomment-737003955
 function hotfixPostcssLoaderConfig (subloader) {
@@ -10,15 +11,15 @@ function hotfixPostcssLoaderConfig (subloader) {
         'Remove postcssOptions workaround in config/webpack/environment.js'
       )
     } else {
-      subloader.options.postcssOptions = subloader.options.config;
-      delete subloader.options.config;
+      subloader.options.postcssOptions = subloader.options.config
+      delete subloader.options.config
     }
   }
 }
 
 environment.loaders.keys().forEach(loaderName => {
-  const loader = environment.loaders.get(loaderName);
-  loader.use.forEach(hotfixPostcssLoaderConfig);
-});
+  const loader = environment.loaders.get(loaderName)
+  loader.use.forEach(hotfixPostcssLoaderConfig)
+})
 
 module.exports = environment
