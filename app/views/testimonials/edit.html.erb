@@ -1,16 +1,13 @@
-<div class="md:grid md:grid-cols-3 md:gap-12">
-  <div class="md:col-span-1">
+<div class="md:grid md:grid- md:gap-12">
+  <div class="px-20 md:col-span-1">
     <div class="px-4 sm:px-0">
+    <div class="px-4 py-5">
       <h1 class="text-lg font-medium leading-6 text-gray-900">Update Testimonial</h1>
       <p class="mt-1 text-sm text-gray-600">
         The latest six testimonials will appear on your wedsite.
-      </p>
+      </p>    
+    </div>
+      <%= render 'form', testimonial: @testimonial %>
     </div>
   </div>
-
-  <%= render 'form', testimonial: @testimonial %>
-
 </div>
-
-<%= link_to 'Show', @testimonial %> |
-<%= link_to 'Back', testimonials_path %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GtsApi</title>
+    <title>GTS CONFIG</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,6 +22,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+    <div class="relative bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <%= yield %>
+      </div>
+    </div>
+
   </body>
 </html>
